@@ -1,0 +1,27 @@
+# Download the helper library from https://www.twilio.com/docs/python/install
+from twilio.rest import Client
+from dotenv import load_dotenv
+import os
+import requests
+import json
+
+load_dotenv()
+
+# Your Account Sid and Auth Token from twilio.com/console
+# DANGER! This is insecure. See http://twil.io/secure
+account_sid = str(os.environ.get('account_sid'))
+auth_token = str(os.environ.get('auth_token'))
+
+client = Client(account_sid, auth_token)
+
+notification = ""
+recipient = ""
+
+message = client.messages \
+                .create(
+                     body=notification,
+                     from_='+15405180462',
+                     to=recipient
+                 )
+
+print(message.sid)
