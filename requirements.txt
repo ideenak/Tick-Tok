@@ -5,3 +5,5 @@ gunicorn
 requests>=2.20.0
 gspread
 oauth2client
+Flask>=0.12
+twilio~=6.0.0
