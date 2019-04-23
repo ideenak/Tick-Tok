@@ -3,3 +3,5 @@ python-dotenv
 Flask
 gunicorn
 requests==1.2.0
+gspread
+oauth2client
