@@ -17,7 +17,7 @@ api_key = os.environ.get("ALPHAVANTAGE_API_KEY")
 CREDENTIALS_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "auth", "google_api_credentials.json")
 
 DOCUMENT_ID = os.environ.get("GOOGLE_SHEET_ID", "OOPS")
-SHEET_NAME = "Form Responses 1"
+SHEET_NAME = "Tick-Tok (Responses)"
 
 AUTH_SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets", #> Allows read/write access to the user's sheets and their properties.
