@@ -12,12 +12,12 @@ from twilio.rest import Client
 
 load_dotenv() # loads environment variables set in a ".env" file, including the value of the ALPHAVANTAGE_API_KEY variable
 
-api_key = os.environ.get("ALPHAVANTAGE_API_KEY")
+api_key = os.environ.get("ALPHAVANTAGE_API_KEY1") + os.environ.get("ALPHAVANTAGE_API_KEY2")
 
 CREDENTIALS_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "auth", "google_api_credentials.json")
 
 DOCUMENT_ID = os.environ.get("GOOGLE_SHEET_ID", "OOPS")
-SHEET_NAME = "Tick-Tok (Responses)"
+SHEET_NAME = "TickTok (Responses)"
 
 AUTH_SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets", #> Allows read/write access to the user's sheets and their properties.
@@ -29,6 +29,12 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILEP
 client = gspread.authorize(credentials) #> <class 'gspread.client.Client'>
 
 doc = client.open_by_key(DOCUMENT_ID)
+
+print(SHEET_NAME)
+print(api_key)
+print(DOCUMENT_ID)
+
+
 
 sheet = doc.worksheet(SHEET_NAME)
 
@@ -99,8 +105,8 @@ for row in rows:
         i += 1
 
 
-    account_sid = str(os.environ.get('account_sid'))
-    auth_token = str(os.environ.get('auth_token'))
+    account_sid = str(os.environ.get('account_sid1')) + str(os.environ.get('account_sid2'))
+    auth_token = str(os.environ.get('auth_token1')) + str(os.environ.get('auth_token2'))
 
     client = Client(account_sid, auth_token)
 
