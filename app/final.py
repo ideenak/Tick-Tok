@@ -111,7 +111,6 @@ for row in rows:
     client = Client(account_sid, auth_token)
 
     recipient = "+1" + str(phone_number)
-    print(recipient)
 
     if(message_count == 0):
         notification = "Tick-Tok Portfolio Management \nDate: " + date + "\nNone of your stocks had price movements that exceeded the threshold."
