@@ -1,3 +1,4 @@
+import pytest
 from my_script import enlarge, notificationsigma, sheet_log
 
 def test_enlarge():
