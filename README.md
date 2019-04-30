@@ -40,4 +40,3 @@ python robo_advisor.py
 Program will send messsages to the numbers entered in the google sheet
 ```
 
-4. Insert name of stock price and data will be saved to data folder
