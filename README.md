@@ -21,19 +21,26 @@ Open .env file and insert ```ALPHAVANTAGE_API_KEY='YOUR API KEY GOES HERE'```
 Replace api credentials file in /auth with new downloaded credentials
 ```
 
-4. Create google form to gather portfolio information and google sheet to store data
+4. Request an API Key and Authorization Token from https://www.twilio.com/
+```
+touch .env
+Open .env file and insert ```account_sid='YOUR API KEY GOES HERE'``` and ```auth_token ='YOUR AUTHORIZATION TOKEN GOES HERE'```
+
+```
+
+5. Create google form to gather portfolio information and google sheet to store data
 ```
 Share the google sheet with the email address under "client email" in the google api credential file
 Update the SHEET_NAME in app/final.py 
 Update the GOOGLE_SHEET_ID in the .env
 ```
 
-5. Gather information from the google form 
+6. Gather information from the google form 
 ```
 Share the google sheet with the email address under "client email" in the google api credential file
 ```
 
-6. Run the file
+7. Run the file
 
 ```
 python robo_advisor.py
