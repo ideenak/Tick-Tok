@@ -37,6 +37,6 @@ Share the google sheet with the email address under "client email" in the google
 
 ```
 python robo_advisor.py
-Program will send messsages to the numbers entered in the google sheet
+Program will send messages to the numbers entered in the google sheet
 ```
 
