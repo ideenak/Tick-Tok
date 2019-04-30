@@ -44,7 +44,24 @@ def notificationsigma(i):
 #certain variables that were irrelevant to the actual test were changed
 
 def sheetlog(i):
+    load_dotenv()
     DOCUMENT_ID = os.environ.get("GOOGLE_SHEET_ID", "OOPS")
     SHEET_NAME = "TickTok (Responses)"
-    
+    AUTH_SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets", #> Allows read/write access to the user's sheets and their properties.
+    "https://www.googleapis.com/auth/drive.file" #> Per-file access to files created or opened by the app.
+]
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILEPATH, AUTH_SCOPE)
 
+    client = gspread.authorize(credentials) #> <class 'gspread.client.Client'>
+
+    doc = client.open_by_key(DOCUMENT_ID)
+
+    sheet = doc.worksheet(SHEET_NAME)
+
+    rows = sheet.get_all_records()
+    
+    for row in rows:
+        phone_number = row["Phone Number"]
+        #test phone number "012345789" will be used here
+        return phone_number
