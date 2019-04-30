@@ -1,4 +1,12 @@
-
+from dotenv import load_dotenv
+import json
+import os
+import requests
+import datetime
+import csv
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from twilio.rest import Client
 
 
 def enlarge(i):
@@ -34,3 +42,9 @@ def notificationsigma(i):
 
 
 #certain variables that were irrelevant to the actual test were changed
+
+def sheetlog(i):
+    DOCUMENT_ID = os.environ.get("GOOGLE_SHEET_ID", "OOPS")
+    SHEET_NAME = "TickTok (Responses)"
+    
+
