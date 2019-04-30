@@ -9,7 +9,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from twilio.rest import Client
 
 
-def enlarge(i):
+def enlarge():
     if(message_count == 0):
         date = "xyz"
         notification = "Tick-Tok Portfolio Management \nDate: " + date + "\nNone of your stocks had price movements that exceeded the threshold."
@@ -23,7 +23,7 @@ def enlarge(i):
         return message
 
 
-def notificationsigma(i):
+def notificationsigma():
     message_count = 0
     notification = "Tick-Tok Portfolio Management \n"
 
@@ -43,7 +43,7 @@ def notificationsigma(i):
 
 #certain variables that were irrelevant to the actual test were changed
 
-def sheet_log(i):
+def sheet_log():
     load_dotenv()
     DOCUMENT_ID = os.environ.get("GOOGLE_SHEET_ID", "OOPS")
     SHEET_NAME = "TickTok (Responses)"
