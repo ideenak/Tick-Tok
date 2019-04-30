@@ -12,7 +12,7 @@ from twilio.rest import Client
 
 load_dotenv() # loads environment variables set in a ".env" file, including the value of the ALPHAVANTAGE_API_KEY variable
 
-api_key = os.environ.get("ALPHAVANTAGE_API_KEY1") + os.environ.get("ALPHAVANTAGE_API_KEY2")
+api_key = os.environ.get("ALPHAVANTAGE_API_KEY") 
 
 CREDENTIALS_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "auth", "google_api_credentials.json")
 
@@ -105,9 +105,8 @@ for row in rows:
         i += 1
 
 
-    account_sid = str(os.environ.get('account_sid1')) + str(os.environ.get('account_sid2'))
-    auth_token = str(os.environ.get('auth_token1')) + str(os.environ.get('auth_token2'))
-
+    account_sid = str(os.environ.get('account_sid'))
+    auth_token = str(os.environ.get('auth_token'))
     client = Client(account_sid, auth_token)
 
     recipient = "+1" + str(phone_number)
