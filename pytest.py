@@ -1,4 +1,4 @@
-from my_script import enlarge, notificationsigma
+from my_script import enlarge, notificationsigma, sheet_log
 
 def test_enlarge():
     result = enlarge
