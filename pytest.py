@@ -26,4 +26,6 @@ def test_notificationsigma():
         assert result == "AGR moved 100% today."
 
         
-def test_sheets():
+def test_sheet_log():
+    result = sheet_log
+    assert result == "0123456789"
