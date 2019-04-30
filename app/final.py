@@ -38,7 +38,7 @@ print(DOCUMENT_ID)
 
 sheet = doc.worksheet(SHEET_NAME)
 
-rows = sheet.get_all_records()
+rows = sheet.get_all_records() #> obtaining information, row by row, from the google sheet, storing it in a list of dictionaries
 
 for row in rows:
     print("-------")
@@ -68,10 +68,10 @@ for row in rows:
         if(symbol != ""):
             request_url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}"
             stock_info = requests.get(request_url)
-            if("Error" in stock_info.text):
+            if("Error" in stock_info.text): #> Checking for error in the stock ticker symbol
                 print(f"error in Stock {i}")
             else:
-                parsed_stock_info = json.loads(stock_info.text)
+                parsed_stock_info = json.loads(stock_info.text) #> Loading 
                 latest_day = parsed_stock_info['Meta Data']['3. Last Refreshed']
                 latest_day = latest_day[:10]
                 date = latest_day
