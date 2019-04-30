@@ -71,7 +71,7 @@ for row in rows:
             if("Error" in stock_info.text): #> Checking for error in the stock ticker symbol
                 print(f"error in Stock {i}")
             else:
-                parsed_stock_info = json.loads(stock_info.text) #> Loading 
+                parsed_stock_info = json.loads(stock_info.text) #> Loading parsed alpha vantage json info into list of dictionaries
                 latest_day = parsed_stock_info['Meta Data']['3. Last Refreshed']
                 latest_day = latest_day[:10]
                 date = latest_day
@@ -80,7 +80,7 @@ for row in rows:
                 print("opening: " + str(latest_day_opening_price))
                 print("closing: " + str(latest_day_closing_price))
 
-                if(date_and_notice_included == 0):
+                if(date_and_notice_included == 0): 
                     notification += "Date: " + latest_day
                     notification += "\nNotice:"
                     date_and_notice_included = 1
@@ -92,7 +92,7 @@ for row in rows:
                 gthresh = (1 + pct) * float(latest_day_opening_price)
                 lthresh = (1 - pct) * float(latest_day_opening_price)
 
-                pctchg = ((latest_day_closing_price - latest_day_opening_price)/latest_day_opening_price)
+                pctchg = ((latest_day_closing_price - latest_day_opening_price)/latest_day_opening_price) #> calculating % change in price to be used in checking against threshold
 
                 print("% change: " + str(pctchg * 100))
 
@@ -105,16 +105,16 @@ for row in rows:
         i += 1
 
 
-    account_sid = str(os.environ.get('account_sid'))
+    account_sid = str(os.environ.get('account_sid')) #> obtaining twilio keys and authorization
     auth_token = str(os.environ.get('auth_token'))
     client = Client(account_sid, auth_token)
 
     recipient = "+1" + str(phone_number)
 
-    if(message_count == 0):
+    if(message_count == 0): #> changing to default message if no stocks moved above the threshold level
         notification = "Tick-Tok Portfolio Management \nDate: " + date + "\nNone of your stocks had price movements that exceeded the threshold."
 
-    message = client.messages \
+    message = client.messages \ #> sending message
                     .create(
                         body=notification,
                         from_='+15405180462',
