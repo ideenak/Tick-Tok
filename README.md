@@ -18,7 +18,7 @@ Open .env file and insert ```ALPHAVANTAGE_API_KEY='YOUR API KEY GOES HERE'```
 3. Download Google Sheets and Google Drive api credentials from https://cloud.google.com/apis/
 
 ```
-Replace api credentials in /auth with new downloaded credentials
+Replace api credentials file in /auth with new downloaded credentials
 ```
 
 4. Create google form to gather portfolio information and google sheet to store data
