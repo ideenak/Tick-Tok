@@ -7,3 +7,4 @@ gspread
 oauth2client
 Flask>=0.12
 twilio~=6.0.0
+pytest
