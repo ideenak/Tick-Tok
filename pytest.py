@@ -1,6 +1,6 @@
 from my_script import enlarge, notificationsigma
 
-def test_enlarge()
+def test_enlarge():
     result = enlarge
     date = "xyz"
     assert result == "Tick-Tok Portfolio Management \nDate: " + date + "\nNone of your stocks had price movements that exceeded the threshold."
@@ -24,3 +24,6 @@ def test_notificationsigma():
 
         result = notificationsigma
         assert result == "AGR moved 100% today."
+
+        
+def test_sheets():
