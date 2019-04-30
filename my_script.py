@@ -43,7 +43,7 @@ def notificationsigma(i):
 
 #certain variables that were irrelevant to the actual test were changed
 
-def sheetlog(i):
+def sheet_log(i):
     load_dotenv()
     DOCUMENT_ID = os.environ.get("GOOGLE_SHEET_ID", "OOPS")
     SHEET_NAME = "TickTok (Responses)"
